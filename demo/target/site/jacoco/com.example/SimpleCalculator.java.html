@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SimpleCalculator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">demo</a> &gt; <a href="index.source.html" class="el_package">com.example</a> &gt; <span class="el_source">SimpleCalculator.java</span></div><h1>SimpleCalculator.java</h1><pre class="source lang-java linenums">
+package com.example;
+
+import java.util.*;
+
+/**
+ * This is a simple calculator class.
+ * It possesses functions for addition, subtraction, multiplication, division,
+ * modulo, Square root, Factorial, Natural log and power
+ */
+final class SimpleCalculator {
+<span class="fc" id="L12">    private static boolean exit = true;</span>
+    private static final int ADDITION = 1;
+    private static final int SUBTRACTION = 2;
+    private static final int MULTIPLICATION = 3;
+    private static final int DIVISION = 4;
+    private static final int MODULUS = 5;
+    private static final int SQUARE_ROOT = 6;
+    private static final int FACTORIAL = 7;
+    private static final int NATURAL_LOG = 8;
+    private static final int POWER = 9;
+    private static final int LEAVE = 10;
+<span class="fc" id="L23">    private static final int DEFAULT = 11;</span>
+
+    /** Constructor.*/
+    private SimpleCalculator() {
+
+    }
+
+    /** Get exit variable. */
+    static boolean getExit() {
+<span class="nc" id="L32">        return exit;</span>
+    }
+
+    /** Set exit variable. */
+    static void setBoolean(boolean b) {
+<span class="nc" id="L37">        exit = b;</span>
+<span class="nc" id="L38">    }</span>
+
+    /** Display options to choose from. */
+    static void displayOptions() {
+<span class="nc" id="L42">        System.out.println(&quot;1-Addition&quot;);</span>
+<span class="nc" id="L43">        System.out.println(&quot;2-Subtraction&quot;);</span>
+<span class="nc" id="L44">        System.out.println(&quot;3-Multiplication&quot;);</span>
+<span class="nc" id="L45">        System.out.println(&quot;4-Division&quot;);</span>
+<span class="nc" id="L46">        System.out.println(&quot;5-Modulo&quot;);</span>
+<span class="nc" id="L47">        System.out.println(&quot;6-Square Root&quot;);</span>
+<span class="nc" id="L48">        System.out.println(&quot;7-Factorial&quot;);</span>
+<span class="nc" id="L49">        System.out.println(&quot;8-Natural Log&quot;);</span>
+<span class="nc" id="L50">        System.out.println(&quot;9-Power&quot;);</span>
+<span class="nc" id="L51">        System.out.println(&quot;10-Exit&quot;);</span>
+<span class="nc" id="L52">        System.out.print(&quot;Enter choice:&quot;);</span>
+<span class="nc" id="L53">    }</span>
+
+    /* Add numbers.*/
+    static double sum(int a, int b) {
+<span class="fc" id="L57">        return (double) a + b;</span>
+    }
+
+    /* Subtract numbers.*/
+    static double sub(int a, int b) {
+<span class="fc" id="L62">        return (double) a - b;</span>
+    }
+
+    /* Multiply numbers.*/
+    static double mul(int a, int b) {
+<span class="fc" id="L67">        return (double) a * b;</span>
+    }
+
+    /* Divide numbers.*/
+    static double div(int a, int b) {
+<span class="fc" id="L72">        return (double) a / b;</span>
+    }
+
+    /* Modulus of numbers.*/
+    static double mod(int a, int b) {
+<span class="nc" id="L77">        return (double) a % b;</span>
+    }
+
+    /* Square root of number.*/
+    static double sqrt(int a) {
+<span class="nc" id="L82">        return Math.sqrt(a);</span>
+    }
+
+    /** Factorial of number.*/
+    static double fact(int a) {
+<span class="nc" id="L87">        int fact = 1;</span>
+<span class="nc" id="L88">        int l = a;</span>
+<span class="nc bnc" id="L89" title="All 2 branches missed.">        while (l &gt; 1) {</span>
+<span class="nc" id="L90">            fact *= l--;</span>
+        }
+<span class="nc" id="L92">        return fact;</span>
+    }
+
+    /* Natural log of number.*/
+    static double log(int a) {
+<span class="fc" id="L97">        return Math.log(a);</span>
+    }
+
+    /* Power of number.*/
+    static double pow(int a, int b) {
+<span class="nc" id="L102">        return Math.pow(a, b);</span>
+    }
+
+    /* Print result. Not necessary honestly.*/
+    static void output(double r) {
+<span class="nc" id="L107">        System.out.println(&quot;Result: &quot; + r);</span>
+<span class="nc" id="L108">    }</span>
+
+    /** Switch case for choice.*/
+    static double choice(int ch) {
+<span class="nc" id="L112">        int a = 0;</span>
+<span class="nc" id="L113">        int b = 0;</span>
+<span class="nc" id="L114">        double res = 0;</span>
+<span class="nc" id="L115">        Scanner sc = new Scanner(System.in);</span>
+<span class="nc bnc" id="L116" title="All 11 branches missed.">        switch (ch) {</span>
+            case ADDITION:
+<span class="nc" id="L118">                System.out.print(&quot;Enter value 1:&quot;);</span>
+<span class="nc" id="L119">                a = sc.nextInt();</span>
+<span class="nc" id="L120">                System.out.print(&quot;Enter value 2:&quot;);</span>
+<span class="nc" id="L121">                b = sc.nextInt();</span>
+<span class="nc" id="L122">                res = sum(a, b);</span>
+<span class="nc" id="L123">                break;</span>
+            case SUBTRACTION:
+<span class="nc" id="L125">                System.out.print(&quot;Enter value 1:&quot;);</span>
+<span class="nc" id="L126">                a = sc.nextInt();</span>
+<span class="nc" id="L127">                System.out.print(&quot;Enter value 2:&quot;);</span>
+<span class="nc" id="L128">                b = sc.nextInt();</span>
+<span class="nc" id="L129">                res = sub(a, b);</span>
+<span class="nc" id="L130">                break;</span>
+            case MULTIPLICATION:
+<span class="nc" id="L132">                System.out.print(&quot;Enter value 1:&quot;);</span>
+<span class="nc" id="L133">                a = sc.nextInt();</span>
+<span class="nc" id="L134">                System.out.print(&quot;Enter value 2:&quot;);</span>
+<span class="nc" id="L135">                b = sc.nextInt();</span>
+<span class="nc" id="L136">                res = mul(a, b);</span>
+<span class="nc" id="L137">                break;</span>
+            case DIVISION:
+<span class="nc" id="L139">                System.out.print(&quot;Enter value 1:&quot;);</span>
+<span class="nc" id="L140">                a = sc.nextInt();</span>
+<span class="nc" id="L141">                System.out.print(&quot;Enter value 2:&quot;);</span>
+<span class="nc" id="L142">                b = sc.nextInt();</span>
+<span class="nc" id="L143">                res = div(a, b);</span>
+<span class="nc" id="L144">                break;</span>
+            case MODULUS:
+<span class="nc" id="L146">                System.out.print(&quot;Enter value 1:&quot;);</span>
+<span class="nc" id="L147">                a = sc.nextInt();</span>
+<span class="nc" id="L148">                System.out.print(&quot;Enter value 2:&quot;);</span>
+<span class="nc" id="L149">                b = sc.nextInt();</span>
+<span class="nc" id="L150">                res = mod(a, b);</span>
+<span class="nc" id="L151">                break;</span>
+            case SQUARE_ROOT:
+<span class="nc" id="L153">                System.out.print(&quot;Enter value:&quot;);</span>
+<span class="nc" id="L154">                a = sc.nextInt();</span>
+<span class="nc" id="L155">                res = sqrt(a);</span>
+<span class="nc" id="L156">                break;</span>
+            case FACTORIAL:
+<span class="nc" id="L158">                System.out.print(&quot;Enter value:&quot;);</span>
+<span class="nc" id="L159">                a = sc.nextInt();</span>
+<span class="nc bnc" id="L160" title="All 2 branches missed.">                if (a &lt; 1) {</span>
+<span class="nc" id="L161">                    System.out.println(&quot;Invalid value&quot;);</span>
+                }
+<span class="nc" id="L163">                res = fact(a);</span>
+<span class="nc" id="L164">                break;</span>
+            case NATURAL_LOG:
+<span class="nc" id="L166">                System.out.print(&quot;Enter value:&quot;);</span>
+<span class="nc" id="L167">                a = sc.nextInt();</span>
+<span class="nc" id="L168">                res = log(a);</span>
+<span class="nc" id="L169">                break;</span>
+            case POWER:
+<span class="nc" id="L171">                System.out.print(&quot;Enter value:&quot;);</span>
+<span class="nc" id="L172">                a = sc.nextInt();</span>
+<span class="nc" id="L173">                System.out.print(&quot;Enter power:&quot;);</span>
+<span class="nc" id="L174">                b = sc.nextInt();</span>
+<span class="nc" id="L175">                res = pow(a, b);</span>
+<span class="nc" id="L176">                break;</span>
+            case LEAVE:
+<span class="nc" id="L178">                setBoolean(false);</span>
+<span class="nc" id="L179">                break;</span>
+            default:
+<span class="nc" id="L181">                System.out.println(&quot;Option not found&quot;);</span>
+        }
+<span class="nc" id="L183">        sc.close();</span>
+<span class="nc" id="L184">        return res;</span>
+    }
+
+    /**Main function that consolidates the other functions.*/
+    public static void main(String[] args) {
+<span class="nc" id="L189">        Scanner sc = new Scanner(System.in);</span>
+<span class="nc" id="L190">        int ch = DEFAULT;</span>
+        double result;
+<span class="nc bnc" id="L192" title="All 2 branches missed.">        while (getExit()) {</span>
+<span class="nc" id="L193">            displayOptions();</span>
+            try {
+<span class="nc" id="L195">                ch = sc.nextInt();</span>
+<span class="nc" id="L196">            } catch (ArithmeticException e) {</span>
+<span class="nc" id="L197">                ch = DEFAULT;</span>
+            }
+            try {
+<span class="nc" id="L200">                result = choice(ch);</span>
+<span class="nc" id="L201">                output(result);</span>
+<span class="nc" id="L202">            } catch (ArithmeticException e) {</span>
+<span class="nc" id="L203">                System.out.println(&quot;Invalid value entry&quot;);</span>
+            }
+        }
+<span class="nc" id="L206">        sc.close();</span>
+<span class="nc" id="L207">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
