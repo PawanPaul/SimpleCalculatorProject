@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="8.45.1">
+<file name="C:\SimpleCalculatorProject\demo\src\main\java\com\example\App.java">
+</file>
+<file name="C:\SimpleCalculatorProject\demo\src\main\java\com\example\SimpleCalculator.java">
+</file>
+<file name="C:\SimpleCalculatorProject\demo\src\test\java\com\example\AppTest.java">
+</file>
+<file name="C:\SimpleCalculatorProject\demo\src\test\java\com\example\SimpleCalculatorTest.java">
+</file>
 </checkstyle>
