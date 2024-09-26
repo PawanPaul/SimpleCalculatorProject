@@ -18,7 +18,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_291\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\pawan\AppData\Local\Temp\surefire908046981483549862\surefirebooter3609404678382887284.jar C:\Users\pawan\AppData\Local\Temp\surefire908046981483549862 2024-09-25T08-48-52_808-jvmRun1 surefire2498147543369124630tmp surefire_06533462786443429449tmp"/>
+    <property name="sun.java.command" value="C:\Users\pawan\AppData\Local\Temp\surefire7901953491726948503\surefirebooter7811498924701505128.jar C:\Users\pawan\AppData\Local\Temp\surefire7901953491726948503 2024-09-26T10-49-28_172-jvmRun1 surefire910318466343337413tmp surefire_01079613115453141198tmp"/>
     <property name="surefire.test.class.path" value="c:\SimpleCalculatorProject\demo\target\test-classes;c:\SimpleCalculatorProject\demo\target\classes;C:\Users\pawan\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\pawan\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\pawan\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\pawan\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\pawan\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\pawan\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\pawan"/>
@@ -31,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\pawan\AppData\Local\Temp\surefire908046981483549862\surefirebooter3609404678382887284.jar;C:\\Users\\pawan\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.4\\org.jacoco.agent-0.8.4-runtime.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\pawan\AppData\Local\Temp\surefire7901953491726948503\surefirebooter7811498924701505128.jar;C:\\Users\\pawan\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.4\\org.jacoco.agent-0.8.4-runtime.jar"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_291\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_291\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_291\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_291\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_291\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_291\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_291\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_291\jre\classes"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -60,5 +60,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="test" classname="com.example.SimpleCalculatorTest" time="0.006"/>
+  <testcase name="test" classname="com.example.SimpleCalculatorTest" time="0.007"/>
 </testsuite>

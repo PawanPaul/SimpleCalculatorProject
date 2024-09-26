@@ -21,6 +21,8 @@ final class SimpleCalculator {
     private static final int POWER = 9;
     private static final int LEAVE = 10;
     private static final int DEFAULT = 11;
+    private static final int SLEEPTIME = 1000;
+    private static Scanner sc = new Scanner(System.in);
 
     /** Constructor.*/
     private SimpleCalculator() {
@@ -35,21 +37,6 @@ final class SimpleCalculator {
     /** Set exit variable. */
     static void setBoolean(boolean b) {
         exit = b;
-    }
-
-    /** Display options to choose from. */
-    static void displayOptions() {
-        System.out.println("1-Addition");
-        System.out.println("2-Subtraction");
-        System.out.println("3-Multiplication");
-        System.out.println("4-Division");
-        System.out.println("5-Modulo");
-        System.out.println("6-Square Root");
-        System.out.println("7-Factorial");
-        System.out.println("8-Natural Log");
-        System.out.println("9-Power");
-        System.out.println("10-Exit");
-        System.out.print("Enter choice:");
     }
 
     /* Add numbers.*/
@@ -102,77 +89,76 @@ final class SimpleCalculator {
         return Math.pow(a, b);
     }
 
-    /* Print result. Not necessary honestly.*/
+    /** Print result. Not necessary honestly.*/
     static void output(double r) {
         System.out.println("Result: " + r);
+        try {
+            Thread.sleep(SLEEPTIME);
+        } catch (InterruptedException ie) {
+            System.out.println("Wait was interrupted");
+        }
+    }
+
+    /** Get 2 inputs.*/
+    static int[] getVal() {
+        System.out.print("Enter value 1: ");
+        int a = sc.nextInt();
+        System.out.print("Enter value 2: ");
+        int b = sc.nextInt();
+        int[] i = {a, b};
+        return i;
     }
 
     /** Switch case for choice.*/
     static double choice(int ch) {
         int a = 0;
-        int b = 0;
+        int[] arr = new int[2];
         double res = 0;
-        Scanner sc = new Scanner(System.in);
         switch (ch) {
             case ADDITION:
-                System.out.print("Enter value 1:");
-                a = sc.nextInt();
-                System.out.print("Enter value 2:");
-                b = sc.nextInt();
-                res = sum(a, b);
+                arr = getVal();
+                res = sum(arr[0], arr[1]);
                 break;
             case SUBTRACTION:
-                System.out.print("Enter value 1:");
-                a = sc.nextInt();
-                System.out.print("Enter value 2:");
-                b = sc.nextInt();
-                res = sub(a, b);
+                arr = getVal();
+                res = sub(arr[0], arr[1]);
                 break;
             case MULTIPLICATION:
-                System.out.print("Enter value 1:");
-                a = sc.nextInt();
-                System.out.print("Enter value 2:");
-                b = sc.nextInt();
-                res = mul(a, b);
+                arr = getVal();
+                res = mul(arr[0], arr[1]);
                 break;
             case DIVISION:
-                System.out.print("Enter value 1:");
-                a = sc.nextInt();
-                System.out.print("Enter value 2:");
-                b = sc.nextInt();
-                res = div(a, b);
+                arr = getVal();
+                res = div(arr[0], arr[1]);
                 break;
             case MODULUS:
-                System.out.print("Enter value 1:");
-                a = sc.nextInt();
-                System.out.print("Enter value 2:");
-                b = sc.nextInt();
-                res = mod(a, b);
+                arr = getVal();
+                res = mod(arr[0], arr[1]);
                 break;
             case SQUARE_ROOT:
-                System.out.print("Enter value:");
+                System.out.print("Enter value: ");
                 a = sc.nextInt();
+                sc.nextLine();
                 res = sqrt(a);
                 break;
             case FACTORIAL:
-                System.out.print("Enter value:");
+                System.out.print("Enter value: ");
                 a = sc.nextInt();
+                sc.nextLine();
                 if (a < 1) {
-                    System.out.println("Invalid value");
+                    System.out.println("Invalid value ");
                 }
                 res = fact(a);
                 break;
             case NATURAL_LOG:
-                System.out.print("Enter value:");
+                System.out.print("Enter value: ");
                 a = sc.nextInt();
+                sc.nextLine();
                 res = log(a);
                 break;
             case POWER:
-                System.out.print("Enter value:");
-                a = sc.nextInt();
-                System.out.print("Enter power:");
-                b = sc.nextInt();
-                res = pow(a, b);
+                arr = getVal();
+                res = pow(arr[0], arr[1]);
                 break;
             case LEAVE:
                 setBoolean(false);
@@ -180,26 +166,35 @@ final class SimpleCalculator {
             default:
                 System.out.println("Option not found");
         }
-        sc.close();
         return res;
     }
 
     /**Main function that consolidates the other functions.*/
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         int ch = DEFAULT;
         double result;
         while (getExit()) {
-            displayOptions();
+            System.out.println("1-Addition");
+            System.out.println("2-Subtraction");
+            System.out.println("3-Multiplication");
+            System.out.println("4-Division");
+            System.out.println("5-Modulo");
+            System.out.println("6-Square Root");
+            System.out.println("7-Factorial");
+            System.out.println("8-Natural Log");
+            System.out.println("9-Power");
+            System.out.println("10-Exit");
+            System.out.print("Enter choice: ");
             try {
                 ch = sc.nextInt();
-            } catch (ArithmeticException e) {
-                ch = DEFAULT;
+            } catch (NoSuchElementException e) {
+                ch = LEAVE;
+                System.out.println("An error has occured with input");
             }
             try {
                 result = choice(ch);
                 output(result);
-            } catch (ArithmeticException e) {
+            } catch (NoSuchElementException e) {
                 System.out.println("Invalid value entry");
             }
         }
