@@ -8,6 +8,7 @@ import java.util.*;
  * This is a simple calculator class.
  * It possesses functions for addition, subtraction, multiplication, division,
  * modulo, Square root, Factorial, Natural log and power
+ * A modification to see if something has changed
  */
 final class SimpleCalculator {
     private static boolean exit = true;
